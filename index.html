@@ -47,31 +47,38 @@
           }
 
           window.addEventListener('unhandledrejection', function(event) {
-            if (event.reason) {
-              var msg = event.reason.message || (typeof event.reason.toString === 'function' ? event.reason.toString() : '');
-              if (
-                msg.includes('Failed to fetch') ||
-                msg.includes('MetaMask') ||
-                msg.includes('metamask') ||
-                msg.includes('Connector') ||
-                msg.includes('User rejected') ||
-                msg.includes('ProviderDisconnected') ||
-                msg.includes('ResourceUnavailable')
-              ) {
-                event.preventDefault();
-              }
+            var reason = event.reason;
+            var msg = (reason && (reason.message || (typeof reason.toString === 'function' ? reason.toString() : ''))) || '';
+            if (
+              !reason ||
+              msg.includes('Failed to fetch') ||
+              msg.includes('MetaMask') ||
+              msg.includes('metamask') ||
+              msg.includes('Connector') ||
+              msg.includes('User rejected') ||
+              msg.includes('ProviderDisconnected') ||
+              msg.includes('ResourceUnavailable') ||
+              msg.includes('Failed to connect')
+            ) {
+              event.preventDefault();
+              if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+              return true;
             }
-          });
+          }, true);
 
           window.addEventListener('error', function(event) {
-            if (event.message && (
-              event.message.includes('MetaMask') ||
-              event.message.includes('metamask') ||
-              event.message.includes('Failed to connect')
-            )) {
+            var msg = event.message || '';
+            if (
+              msg.includes('MetaMask') ||
+              msg.includes('metamask') ||
+              msg.includes('Failed to connect') ||
+              msg.includes('Connector')
+            ) {
               event.preventDefault();
+              if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+              return true;
             }
-          });
+          }, true);
 
           if (typeof window.global === 'undefined') {
             window.global = window;
