@@ -30,24 +30,16 @@ export const CustodiaLogo: React.FC<CustodiaLogoProps> = ({
       >
         {/* Shield / Pin Badge Outer Body in Terracotta Rust */}
         <path
-          d="M 50 92 C 34 78 20 58 20 38 C 20 22 32 12 50 12 C 68 12 80 22 80 38 C 80 58 66 78 50 92 Z"
-          fill="#b94a2c"
+          d="M 50 92 C 32 76 18 56 18 36 C 18 21 31 12 50 12 C 69 12 82 21 82 36 C 82 56 68 76 50 92 Z"
+          fill="#c54b2a"
         />
 
         {/* Central Bold White Letter 'C' */}
         <path
-          d="M 63 36 C 59 32.5 54 31 47 31 C 36.5 31 29 39 29 50 C 29 61 36.5 69 47 69 C 54 69 59 67.5 63 64 L 57 58.5 C 54.5 61 51 62 47 62 C 41.5 62 37 57 37 50 C 37 43 41.5 38 47 38 C 51 38 54.5 39 57 41.5 M 63 50 H 51 V 44 H 63 V 50 Z"
+          d="M 64 34 H 50 C 40 34 33 41 33 50 C 33 59 40 66 50 66 H 64 V 52 H 52 V 48 H 64 V 34 Z
+             M 49 43 C 53 43 55 45 55 50 C 55 55 53 57 49 57 C 45 57 43 55 43 50 C 43 45 45 43 49 43 Z"
           fill="#ffffff"
-        />
-        
-        {/* Refined C path for pristine crispness */}
-        <path
-          d="M 63 36.5 L 56.5 41.5 C 54.2 39.2 51 38 47.5 38 C 41.5 38 37 43 37 50 C 37 57 41.5 62 47.5 62 C 51 62 54.2 60.8 56.5 58.5 L 63 63.5 C 59 67.2 53.8 69 47.5 69 C 35.8 69 28.5 60.8 28.5 50 C 28.5 39.2 35.8 31 47.5 31 C 53.8 31 59 32.8 63 36.5 Z"
-          fill="#ffffff"
-        />
-        <path
-          d="M 63 52 H 49 V 46 H 63 V 52 Z"
-          fill="#ffffff"
+          fillRule="evenodd"
         />
       </svg>
 
