@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { INITIAL_FEATURED_EVENTS } from '../data/mockEvents';
 import { EventCard } from '../components/events/EventCard';
 import { CheckInModal } from '../components/organizer/CheckInModal';
+import { CustodiaLogo } from '../components/common/CustodiaLogo';
 import { Shield, Sparkles, Lock, Ticket, ArrowRight, ChevronDown, CheckCircle2, UserCheck, Layers, ExternalLink, Zap } from 'lucide-react';
 
 const ROADMAP_PHASES = [
@@ -177,9 +178,12 @@ export const HomePage: React.FC = () => {
                 {/* Floating Ticket Stub Badge on Hero Image */}
                 <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-[#fff8f4]/95 backdrop-blur-md border border-[#d1c5b2] space-y-3 shadow-rust">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#b94a2c]">
-                      Featured Live Event
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <CustodiaLogo size={24} />
+                      <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#b94a2c]">
+                        Featured Live Event
+                      </span>
+                    </div>
                     <span className="px-2.5 py-0.5 rounded-full bg-[#b94a2c] text-white text-[10px] font-bold">
                       Resale Cap: +10%
                     </span>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Menu, X, Shield, PlusCircle, Ticket as TicketIcon, Compass, HelpCircle, CheckCircle2 } from 'lucide-react';
+import { CustodiaLogo } from '../common/CustodiaLogo';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,18 +15,8 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-[#b94a2c] text-white flex items-center justify-center font-serif font-bold text-xl shadow-rust group-hover:scale-105 transition-transform">
-            C
-          </div>
-          <div>
-            <span className="font-serif font-bold text-2xl tracking-tight text-[#1f1b15] group-hover:text-[#b94a2c] transition-colors">
-              Custodia
-            </span>
-            <span className="block text-[10px] font-sans font-medium tracking-widest text-[#8b716b] uppercase -mt-1">
-              Anti-Scalping Protocol
-            </span>
-          </div>
+        <Link to="/" className="flex items-center gap-3 group hover:opacity-90 transition-opacity">
+          <CustodiaLogo size={44} showText={true} />
         </Link>
 
         {/* Desktop Navigation */}

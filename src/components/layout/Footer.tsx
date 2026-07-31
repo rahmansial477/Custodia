@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { CUSTODIA_CONTRACT_ADDRESS } from '../../constants/network';
 import { Shield, ExternalLink, Github, Twitter, Heart } from 'lucide-react';
+import { CustodiaLogo } from '../common/CustodiaLogo';
 
 export const Footer: React.FC = () => {
   return (
@@ -11,14 +12,9 @@ export const Footer: React.FC = () => {
           
           {/* Brand & Mission */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#b94a2c] text-white flex items-center justify-center font-serif font-bold text-xl shadow-lg">
-                C
-              </div>
-              <span className="font-serif font-bold text-2xl text-white tracking-tight">
-                Custodia
-              </span>
-            </div>
+            <Link to="/" className="inline-block">
+              <CustodiaLogo size={44} showText={true} variant="dark" />
+            </Link>
             <p className="text-sm font-sans text-[#a89c8a] leading-relaxed max-w-md">
               An on-chain anti-scalping event ticketing platform built on GIWA Sepolia testnet. Enforcing immutable price caps, tiered primary minting, and smart waitlists directly inside smart contracts.
             </p>
