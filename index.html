@@ -47,9 +47,27 @@
           }
 
           window.addEventListener('unhandledrejection', function(event) {
-            if (event.reason && (
-              event.reason.message === 'Failed to fetch' ||
-              (typeof event.reason.toString === 'function' && event.reason.toString().includes('Failed to fetch'))
+            if (event.reason) {
+              var msg = event.reason.message || (typeof event.reason.toString === 'function' ? event.reason.toString() : '');
+              if (
+                msg.includes('Failed to fetch') ||
+                msg.includes('MetaMask') ||
+                msg.includes('metamask') ||
+                msg.includes('Connector') ||
+                msg.includes('User rejected') ||
+                msg.includes('ProviderDisconnected') ||
+                msg.includes('ResourceUnavailable')
+              ) {
+                event.preventDefault();
+              }
+            }
+          });
+
+          window.addEventListener('error', function(event) {
+            if (event.message && (
+              event.message.includes('MetaMask') ||
+              event.message.includes('metamask') ||
+              event.message.includes('Failed to connect')
             )) {
               event.preventDefault();
             }
