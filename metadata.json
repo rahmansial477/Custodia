@@ -1,0 +1,6 @@
+{
+  "name": "Custodia",
+  "description": "Anti-scalping event ticketing platform on GIWA Sepolia testnet with on-chain price caps, tiered pricing, and waitlists.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

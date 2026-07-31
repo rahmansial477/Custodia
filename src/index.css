@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Domine', serif;
+    --font-sans: 'Work Sans', sans-serif;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom Editorial Shadows & Utilities */
+.shadow-rust {
+  box-shadow: 0 10px 25px -5px rgba(185, 74, 44, 0.08), 0 8px 10px -6px rgba(185, 74, 44, 0.05);
+}
+
+.shadow-rust-hover {
+  box-shadow: 0 20px 25px -5px rgba(185, 74, 44, 0.14), 0 10px 10px -5px rgba(185, 74, 44, 0.08);
+}
+
+.shadow-rust-lg {
+  box-shadow: 0 25px 50px -12px rgba(185, 74, 44, 0.25);
+}
+
+.btn-primary {
+  background-color: #b94a2c;
+  color: #ffffff;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  background-color: #983316;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(185, 74, 44, 0.3);
+}
+
+.btn-secondary {
+  background-color: #ede1cd;
+  color: #1f1b15;
+  border: 1px solid #dec0b8;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #eadeca;
+  border-color: #b94a2c;
+  transform: translateY(-1px);
+}
+
+.card-editorial {
+  background-color: #fff8f4;
+  border: 1px solid #d1c5b2;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-editorial:hover {
+  transform: translateY(-4px);
+  border-color: #b94a2c;
+  box-shadow: 0 16px 30px -8px rgba(185, 74, 44, 0.12);
+}
+
+/* Perforation styling for tickets */
+.ticket-perforation {
+  background-image: radial-gradient(circle at 100% 50%, transparent 6px, #fff8f4 7px);
+  background-size: 14px 14px;
+  background-position: right center;
+  background-repeat: repeat-y;
+}
+
+/* Ticket Ribbon styling */
+.ribbon {
+  position: absolute;
+  top: 16px;
+  right: -8px;
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  border-top: 8px solid;
+  border-right: 8px solid transparent;
+  filter: brightness(0.7);
+}
+.ribbon.selling-fast { background: #b94a2c; }
+.ribbon.selling-fast::after { border-top-color: #b94a2c; }
+.ribbon.sold-out { background: #1f1b15; }
+.ribbon.sold-out::after { border-top-color: #1f1b15; }
+.ribbon.open { background: #665d4e; }
+.ribbon.open::after { border-top-color: #665d4e; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff8f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #eadeca;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d1c5b2;
+}
+
